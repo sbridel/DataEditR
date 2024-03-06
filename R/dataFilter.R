@@ -730,7 +730,7 @@ dataFilterServer <- function(id,
                   return(ind)
                   # NOT CONTAIN
                 } else if (logic == "not contain") {
-                  return(seq_len(ncol(values$data))[-ind])
+                  return(seq_len(nrow(values$data))[-ind])
                 }
               }
               # REMOVE FILTERS WITHOUT LEVELS
