@@ -714,7 +714,7 @@ dataFilterServer <- function(id,
                   return(ind)
                   # NOT BETWEEN
                 } else if (logic == "not between") {
-                  return(seq_len(ncol(values$data))[-ind])
+                  return(seq_len(nrow(values$data))[-ind])
                 }
                 # CONTAINS | NOT CONTAINS
               } else if (logic %in% c("contain", "not contain")) {
