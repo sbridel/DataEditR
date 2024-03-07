@@ -741,7 +741,10 @@ dataFilterServer <- function(id,
           })
         )
         if(length(values$filters) > 1) {
-          values$rows <- ind[duplicated(ind)] # intersection
+        #          values$rows <- ind[duplicated(ind)] # intersection [ONLY WORKS FOR 2]
+          cntTable = table(ind)
+          intersection = names(cntTable)[cntTable==length(values$filters)]
+          values$rows <- ind[as.numeric(intersection)]
         } else {
           values$rows <- ind
         }
